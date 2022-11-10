@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/login.css" />
+
+    <script>
+        // 登录
+        function login() {
+            event.preventDefault(); //阻止表单默认提交刷新
+            let email = document.getElementById("login-act").value.trim();
+            let pwd = document.getElementById("login-pwd").value.trim();
+            var aqq = /^[1-9][0-9]{4,10}@qq.com$/.test(email);
+            if (aqq == false) {
+                // email.innerHTML = "<span style='color:red'>账号或者密码在1~6个字符之间</span>";
+                alert("请输入正确的格式：xxxxxx@qq.com");
+            } else {
+                let promise = axios.get("http://localhost:7000/login.do", {
+                    params: {
+                        email, pwd
+                    }
+                });
+                promise.then(res => {
+                    let list = res.data;
+                    if (list.length == 1) {
+                        window.location.href = `./index.html?${email}&${pwd}`;
+                    } else {
+                        alert("请输入正确的格式:xxxxxx@qq.com");
+                    }
+                }).catch(e => {
+                    console.log(e);
+                })
+            }
+        }
+    </script>
+    <title>易查单词</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <!-- 登录 -->
+                <form class="sign-in-form">
+                    <h2 class="title">登录</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="email" placeholder="邮箱" id="login-act" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="密码" id="login-pwd" />
+                    </div>
+                    <input type="button" value="立即登录" class="btn solid" onclick="login()" />
+                    <a href="javascript:sendEmailDiv();">忘记密码</a>
+                    <span class="login-hint"></span>
+                </form>
+                <!-- 注册 -->
+                <form class="sign-up-form">
+                    <h2 class="title">注册</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="email" placeholder="邮箱" id="register-act" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="密码" id="register-pwd1" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="确认密码" id="register-pwd2" />
+                    </div>
+                    <input type="button" class="btn" id="register" value="立即注册" onclick="addNew()" />
+                    <span class="register-hint"></span>
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>易查</h3>
+                    <p>易查单词app</p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        没有账号？
+                    </button>
+                </div>
+                <img src="../img/log.svg" class="image" alt="" />
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>易查</h3>
+                    <p>追光学生信息管理系统</p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        已有账号？
+                    </button>
+                </div>
+                <img src="../img/register.svg" class="image" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <div class="sendEmailDivbox">
+        <div id="sendEmailDiv">
+            <h4>找回账号密码</h4>
+            <input type="text" placeholder="输入账号" name="sendNO">
+            <input type="text" name="getCode" id="" placeholder="输入验证码"><button id="sendEmailinner"
+                onclick="getCode()">获取验证码</button>
+            <input type="text" onclick="newpwd(Num)" name="newpwdn" id="" placeholder="输入新密码" readonly>
+            <input type="text" onclick="newpwd(Num)" name="newpwdn2" id="" placeholder="在次输入密码" readonly>
+            <br>
+            <button onclick="quitsendEmail()">退出</button><button onclick="sendEmail()">确认</button>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+<script src="../js/login.js"></script>
+
+</html>

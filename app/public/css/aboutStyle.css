@@ -1,0 +1,455 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* 字体图标库引入 */
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.woff2?t=1664264870632') format('woff2'),
+        url('../font/iconfont.woff?t=1664264870632') format('woff'),
+        url('../font/iconfont.ttf?t=1664264870632') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    min-height: 940px;
+}
+
+#bodydiv {
+    background-image: url('http://localhost:7000/public/img/pubimg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    min-width: 1000px;
+    min-height: 940px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, "PingFang SC", 'Hiragino Sans GB', 'Microsoft Yahei', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif;
+}
+
+.top {
+    width: 100%;
+    height: 80px;
+    position: sticky;
+    top: 0px;
+}
+
+.top .top-nav {
+    width: 85%;
+    max-width: 1300px;
+    min-width: 1000px;
+    margin: auto;
+    padding: 22px 0;
+    height: 36px;
+    zoom: 1;
+}
+
+.top .top-nav span {
+    font-size: 20px;
+}
+
+.top-nav .toplogo {
+    font-size: 25px;
+    font-family: 'Helvetica Neue';
+}
+
+.top-nav .toplogn {
+    float: right;
+}
+
+.top-nav div {
+    display: block;
+    float: left;
+    font-size: 20px;
+    color: #000000;
+    padding: 0px 5px;
+    line-height: 36px;
+    margin-right: 40px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.top-nav div:nth-child(n+2):hover {
+    color: #3095F1;
+    border-radius: 12px;
+    transform: translate3d(0px, 5px, 6px);
+}
+
+/* 中部标题 */
+.headline {
+    width: 100%;
+    height: 250px;
+    margin-top: 170px;
+}
+
+.headline h1 {
+    min-width: 800px;
+    text-align: center;
+    font-size: 48px;
+    color: #3095F1;
+    line-height: 1.5;
+    letter-spacing: 0;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.headline p {
+    min-width: 650px;
+    text-align: center;
+    font-size: 22px;
+    color: #000000;
+    margin-top: 30px;
+    margin-bottom: 72px;
+}
+
+#loginhf {
+    display: block;
+    width: 315px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background-color: #3095F1;
+    font-size: 22px;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 0px auto;
+    transition: all 1s;
+}
+
+#loginhf:hover {
+    transform: translate3d(0px, -8px, -6px);
+}
+
+#moerdonw {
+    position: absolute;
+    bottom: 2%;
+    left: 49%;
+    /* z-index: -1; */
+    transition: all 1s;
+    animation: jiangpu 1s alternate infinite;
+}
+
+@keyframes jiangpu {
+    0% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+#moerdonw div:nth-child(1) {
+    line-height: 75px;
+}
+
+#moerdonw div {
+    width: 100%;
+    height: 35px;
+    font-size: 35px;
+    color: #3095F1;
+    text-align: center;
+}
+
+/* <!-- 产品介绍 --> */
+
+#yiChaAboutTop {
+    font-size: 40px;
+    color: #000000;
+    text-align: center;
+    padding: 20px 15px 0;
+    font-weight: 600;
+}
+
+#yiChaAbout {
+    width: 80%;
+    max-width: 1300px;
+    min-width: 1000px;
+    margin: 65px auto 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+#yiChaAbout div {
+    width: 20%;
+    height: 280px;
+}
+
+#yiChaAbout div div {
+    width: 88px;
+    height: 88px;
+    margin: 0px auto;
+    background-color: #3095F1;
+}
+
+#yiChaAbout div .one {
+    background: url('http://localhost:7000/public/img/home.jpg');
+    background-position: -10px -2158px;
+}
+
+#yiChaAbout div .two {
+    background: url('http://localhost:7000/public/img/home.jpg');
+    background-position: -10px -2485px;
+}
+
+#yiChaAbout div .three {
+    background: url('http://localhost:7000/public/img/home.jpg');
+    background-position: -10px -2266px;
+}
+
+#yiChaAbout div .five {
+    background: url('http://localhost:7000/public/img/home.jpg');
+    background-position: -10px -2377px;
+}
+
+#yiChaAbout div h3 {
+    text-align: center;
+    font-size: 24px;
+    line-height: 150%;
+    margin: 38px 0 4px;
+    font-weight: 600;
+    letter-spacing: 2px
+}
+
+#yiChaAbout div p {
+    text-align: center;
+    max-width: 310px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 175%;
+    color: #8c8889;
+}
+
+#yiChaAboutBody {
+    width: 80%;
+    max-width: 1300px;
+    min-width: 1000px;
+    margin: 65px auto 0;
+    overflow: hidden;
+    padding-left: 170px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+
+}
+
+#yiChaAboutBody .abtLeft span {
+    display: block;
+    font-size: 20px;
+    line-height: 34px;
+    color: #000000;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#yiChaAboutBody .abtLeft p {
+    font-size: 16px;
+    color: #8c8889;
+    max-width: 495px;
+    height: 48px;
+}
+
+#abtloginhf {
+    display: block;
+    width: 215px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    /* background-color: #3095F1; */
+    font-size: 22px;
+    color: #3095F1;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 1s;
+}
+
+/* 产品内部信息 */
+#abtRight {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 700px;
+    height: 430px;
+    transition: all 1s;
+}
+
+#abtRight:hover {
+    transform: scale(1.1);
+}
+
+#draw-border a {
+    background: none;
+    text-transform: uppercase;
+    color: #3095F1;
+    font-weight: bold;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#draw-border a::before,
+a::after {
+    box-sizing: inherit;
+    position: absolute;
+    content: '';
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+#draw-border a::after {
+    bottom: 0;
+    right: 0;
+}
+
+#draw-border a::before {
+    top: 0;
+    left: 0;
+}
+
+#draw-border a:hover::before,
+a:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+#draw-border a:hover::before {
+    border-top-color: #4361ee;
+    border-right-color: #4361ee;
+    transition: width 0.3s ease-out, height 0.3s ease-out 0.3s;
+}
+
+#draw-border a:hover::after {
+    border-bottom-color: #4361ee;
+    border-left-color: #4361ee;
+    transition: border-color 0s ease-out 0.6s, width 0.3s ease-out 0.6s, height 0.3s ease-out 1s;
+}
+
+#founder {
+    width: 80%;
+    height: 475px;
+    max-width: 1300px;
+    min-width: 1000px;
+    margin: 65px auto 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    perspective: 400px;
+}
+
+#founder .founderLeft {
+    width: 700px;
+    height: 430px;
+    margin-top: 10px;
+    background-color: rgb(120, 113, 113);
+    transform: rotateY(25deg) translate3d(103px, 44px, -20px);
+    transition: all 1.5s;
+}
+
+#founder .founderLeft:hover {
+    transform: rotateY(0deg) translate3d(0px, 0px, 0px);
+}
+
+#founder .founderRight {
+    width: 400px;
+    height: 100%;
+    padding-left: 10px;
+}
+
+#founder .founderRight h4 {
+    font-size: 20px;
+    color: #000000;
+    line-height: 150%;
+    padding-left: 16px;
+    margin: 110px 0 30px;
+    font-weight: 600;
+}
+
+#founder .founderRight div p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #8c8889;
+    max-width: 495px;
+    height: 48px;
+}
+
+#founder .founderRight div:hover {
+    background-color: #F8F6F6;
+}
+
+#foot {
+    width: 80%;
+    height: 220px;
+    max-width: 1300px;
+    min-width: 1000px;
+    margin: 65px auto 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+#foot .footLeft {
+    font-size: 16px;
+    color: #8c8889;
+    max-width: 495px;
+    height: 48px;
+}
+
+#foot .footLeft p {
+    margin: 5px 0px;
+    font-size: 12px;
+}
+
+li {
+    list-style: none;
+}
+
+#foot .footRight {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+#foot .footRight ul {
+    font-size: 16px;
+    color: #8c8889;
+    max-width: 495px;
+    height: 48px;
+}
+
+#foot .footRight ul li {
+    margin: 5px 0px;
+    cursor: pointer;
+}
+
+#foot .footRight ul li:hover {
+    color: #3095F1;
+}
+
+/* 回到顶部 */
+#backtop {
+    position: fixed;
+    width: 40px;
+    height: 50px;
+    left: 50%;
+    background-color: transparent;
+    margin-left: 740px;
+    bottom: 80px;
+    cursor: pointer;
+    display: none;
+}
